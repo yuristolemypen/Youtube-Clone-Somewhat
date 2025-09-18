@@ -1,0 +1,27 @@
+.sidebar {
+  background-color: green;
+  position: fixed;
+  left: 0;
+  top: 55px;
+  bottom: 0;
+  z-index: 100;
+  width: 200px;
+}
+
+.sidebar-sec {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 15px 0 15px;
+}
+
+.sidebar-sec img {
+  width: 28px;
+  filter: invert(100%);
+}
+
+.sidebar-sec div {
+  margin-left: 20px;
+  font-size: 14px;
+  color: white
+}
