@@ -1,3 +1,5 @@
+import {videoInfo} from "../data/video-info.js"; 
+
 let videoInfoHTML = '';
 
 videoInfo.forEach((videos) => {

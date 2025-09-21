@@ -1,4 +1,4 @@
-const videoInfo = [
+export const videoInfo = [
   {
     id: '',
     thumbnailImage: '../images/thumbnails/hq720.avif">',
