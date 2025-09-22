@@ -4,25 +4,65 @@
   left: 0;
   top: 55px;
   bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
   z-index: 100;
-  width: 200px;
+  width: 240px;
+}
+
+.sidebar-1 {
+
+}
+
+.sidebar-1, .sidebar-2, .sidebar-3, .sidebar-4 {
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+.sidebar-2, .sidebar-3, .sidebar-4 {
+  border-top-style: solid;
+  border-color: rgb(172, 170, 170);
+  border-width: 1px;
 }
 
 .sidebar-sec {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 14px 15px 0 15px;
-}
-
-.sidebar-sec img {
-  width: 24px;
-  filter: invert(100%);
+  padding: 0 20px 0 20px;
+  height: 42px;
 }
 
 .sidebar-sec div {
   margin-left: 20px;
-  font-size: 14px;
-  font-weight: 400;
-  color: white
+}
+
+.side-top {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.side-top span {
+  transform: scaleY(1.8);
+  font-weight: 200;
+}
+
+.sidebar-sec img {
+  width: 22px;
+}
+
+.sidebar-icon img {
+  filter: invert(100%);
+}
+
+.side-profile img {
+  border-radius: 13px;
+  width: 28px;
+}
+
+.side-profile div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
