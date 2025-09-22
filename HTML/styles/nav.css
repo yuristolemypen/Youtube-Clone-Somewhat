@@ -16,12 +16,13 @@
 }
 
 .sidebar-sec img {
-  width: 28px;
+  width: 24px;
   filter: invert(100%);
 }
 
 .sidebar-sec div {
   margin-left: 20px;
   font-size: 14px;
+  font-weight: 400;
   color: white
 }
