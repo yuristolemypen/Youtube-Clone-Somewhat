@@ -1,4 +1,4 @@
-import {videoInfo} from "../data/video-info.js"; 
+import {videoInfo} from "./data/video-info.js"; 
 
 let videoInfoHTML = '';
 
