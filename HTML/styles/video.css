@@ -35,6 +35,7 @@
 
 .video-author, .video-stats {
   font-size: 14px;
+  font-weight: 400;
   color: rgb(170, 170, 170);
 }
 

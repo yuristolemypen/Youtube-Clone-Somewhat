@@ -3,7 +3,8 @@
 }
 body {
   font-family: Roboto, Arial;
-  background-color: rgb(0, 0, 0);
+  font-weight: 500;
+  background-color: #0F0F0F;
   padding: 112px 15px 0 255px;
 }
 

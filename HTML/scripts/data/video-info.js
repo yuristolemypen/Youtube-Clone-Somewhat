@@ -1,7 +1,7 @@
 export const videoInfo = [
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
@@ -9,7 +9,7 @@ export const videoInfo = [
   },
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
@@ -17,7 +17,7 @@ export const videoInfo = [
   },
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
@@ -25,7 +25,7 @@ export const videoInfo = [
   },
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
@@ -33,7 +33,7 @@ export const videoInfo = [
   },
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
@@ -41,7 +41,7 @@ export const videoInfo = [
   },
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
@@ -49,7 +49,7 @@ export const videoInfo = [
   },
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
@@ -57,7 +57,7 @@ export const videoInfo = [
   },
   {
     id: '',
-    thumbnailImage: '../images/thumbnails/hq720.avif">',
+    thumbnailImage: '../images/thumbnails/hq720.avif',
     profilePicture: '../images/profile-pictures/channels4_profile.jpg',
     videoTitle: "We're Suing Roblox",
     videoAuthor: 'Law By Mike <span class="checkbox">&#10003;</span>',
