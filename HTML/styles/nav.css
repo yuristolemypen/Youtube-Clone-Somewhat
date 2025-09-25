@@ -20,25 +20,21 @@
   scrollbar-color: #aaaaaa #0F0F0F;
 }
 
-.sidebar-1 {
-
+.sidebar-1, .sidebar-2, .sidebar-3, .sidebar-4, .sidebar-5, .sidebar-6, .sidebar-7 {
+ padding: 12px;
 }
 
-.sidebar-1, .sidebar-2, .sidebar-3, .sidebar-4, .sidebar-5 {
- padding: 12px 12px 12px 12px;
-}
-
-.sidebar-2, .sidebar-3, .sidebar-4, .sidebar-5 {
+.sidebar-2, .sidebar-3, .sidebar-4, .sidebar-5, .sidebar-6, .sidebar-7 {
   border-top-style: solid;
   border-color: #aaaaaa60;
   border-width: 1px;
 }
 
-.sidebar-sec {
+.sidebar-sec, .sidebar-4 .side-top, .sidebar-5 .side-top {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 12px 0 12px;
+  padding: 0 12px;
   height: 40px;
   gap: 24px;
   cursor: pointer;
@@ -61,6 +57,10 @@
   font-weight: 500;
 }
 
+.side-top-text{
+  cursor: text;
+} 
+
 .side-top span {
   transform: scaleY(1.8);
   font-weight: 200;
@@ -80,7 +80,37 @@
 }
 
 .side-profile div {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 12px;
+}
+
+.copyright div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 18px;
+}
+
+.copyright p {
+  padding-right: 6px;
+  color: #aaaaaa;
+}
+
+.copyright .copyright-p-end {
+  padding-right: 0;
+}
+
+.copyright .copyright-text {
+  color: #aaaaaaa1;
+  font-weight: 400;
 }
