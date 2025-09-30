@@ -88,7 +88,7 @@
 .copyright {
   display: flex;
   flex-direction: column;
-  padding: 0 12px;
+  padding: 4px 12px 0 12px;
   font-size: 13px;
   font-weight: 500;
   gap: 12px;

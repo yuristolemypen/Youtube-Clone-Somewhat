@@ -3,7 +3,6 @@ header {
 }
 
 .header-top {
-  background-color: red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -29,17 +28,20 @@ header {
 .left-section {
   display: flex;
   align-items: center;
-  background-color: yellow;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 24px 12px 23px;
 }
 
 .hamburger-menu-icon {
-  width: 30px;
-  margin-left: 15px;
-  margin-right: 18px;
+  width: 26px;
+  filter: invert(100%);
+  cursor: pointer;
 }
 
 .youtube-icon-logo {
-  width: 110px;
+  width: 120px;
+  cursor: pointer;
 }
 
 .middle-section {
@@ -47,18 +49,56 @@ header {
   flex: 1;
   align-items: center;
   margin-left: 60px;
-  max-width: 500px;
-  background-color: aquamarine;
+  max-width: 600px;
 }
 
 .search-bar {
-  height: 40px;
+  background-color: #0F0F0F;
   flex: 1;
+  flex-shrink: 0;
+  padding: 0 6px 0 16px;
+  font-size: 14px;
+  color: white;
+  height: 40px;
   width: 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-right-width: 0;
+  border-color: #303030;
+}
+
+.search-bar::placeholder {
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 400;
+}
+
+@media (max-width: 520px) {
+  .middle-section {
+    display: none;
+  }
+}
+
+.search-bar-btn {
+  background-color: #ffffff15;
+  margin-left: -1px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #303030;
+  padding: 7.5px 22px 7.5px 20px;
+}
+
+.search-bar-icon {
+  width: 20px;
+  filter: invert(100%);
 }
 
 .right-section {
-
+  width: 180px;
 }
 
 .bottom-section {
