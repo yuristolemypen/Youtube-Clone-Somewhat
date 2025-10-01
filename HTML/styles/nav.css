@@ -9,8 +9,7 @@
   color: white;
   z-index: 100;
   width: 240px;
-  overflow-x: hidden;
-  overflow-y: scroll; /*if content overflows, automatically creates scrollbar. Better than overflow: scrollbar if you dont want all scrollbar showing regardless of the content*/
+  overflow-y: auto; /*if content overflows, automatically creates scrollbar. Better than overflow: scrollbar if you dont want all scrollbar showing regardless of the content*/
   scrollbar-width: thin;
   scrollbar-color: #0F0F0F #0F0F0F;
 }

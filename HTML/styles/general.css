@@ -5,7 +5,9 @@ body {
   font-family: Roboto, Arial;
   font-weight: 500;
   background-color: #0F0F0F;
-  padding: 112px 15px 0 255px;
+  padding: 112px 24px 0 264px;
+  margin: 0;
+  overflow: scroll;
 }
 
 p {
