@@ -1,29 +1,20 @@
 header {
-  z-index: 100;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 110px;
+  z-index: 3;
+  backdrop-filter: blur(48px);
+  background-color: #0f0f0fcc;
 }
 
 .header-top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: fixed;
   padding: 0 24px 0 23px;
-  left: 0;
-  right: 0;
-  top: 0;
   height: 55px;
-}
-
-.header-bottom {
-  background-color: blue;
-  display: flex;
-  align-items: center;
-  padding: 0 15px 0 25px;
-  position: fixed;
-  left: 240px;
-  right: 0;
-  top: 55px;
-  height: 40px;
 }
 
 .left-section {
@@ -99,7 +90,7 @@ header {
 
 .right-section .search-bar-btn,
 .right-section .voice-search-btn {
-  background-color: #0F0F0F;
+  background-color: transparent;
   border-style: none;
   border-radius: 20px;
   padding: 7.5px 9px;
@@ -169,6 +160,32 @@ header {
   border-radius: 15px;
 }
 
+.header-bottom {
+  display: flex;
+  position: absolute;
+  left: 240px;
+  right: 0;
+  padding: 0 24px 0 24px;
+  height: 55px;
+}
+
 .bottom-section {
-  
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.bottom-btn {
+  background-color: #ffffff1c;
+  color: white;
+  font-family: Roboto;
+  font-size: 14px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
