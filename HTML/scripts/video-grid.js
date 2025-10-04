@@ -29,5 +29,5 @@ videoInfo.forEach((videos) => {
   
 });
 
-document.querySelector('.js-video-grid-container')
+document.getElementById('js-video-grid-container')
   .innerHTML = videoInfoHTML;

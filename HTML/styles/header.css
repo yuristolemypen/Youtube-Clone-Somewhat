@@ -259,8 +259,8 @@ header {
   font-family: Roboto;
   font-size: 0.875rem;
   height: 1.875;
-  padding: 0 10px;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }

@@ -148,48 +148,8 @@
                 <div>Your clips</div>
               </div>
             </div>
-            <div class="sidebar-3">
-              <div class="sidebar-sec side-top">Subscriptions &nbsp;&nbsp;<span>&gt;</span></div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels1_profile.jpg">
-                <div>Ado</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels2_profile.jpg">
-                <div>Adoセンス</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels3_profile.jpg">
-                <div>AloisNL</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels4_profile.jpg">
-                <div>Muse Asia</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels5_profile.jpg">
-                <div>BoxBox</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels6_profile.jpg">
-                <div>EiEn Subs</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels7_profile.jpg">
-                <div>BanG Dream! Girls Band Party! Official</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels8_profile.jpg">
-                <div>Genshin Impact</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels9_profile.jpg">
-                <div>Honkai Star Rail</div>
-              </div>
-              <div class="sidebar-sec side-profile">
-                <img src="../images/sidebar-icons/profile-icons/channels10_profile.jpg">
-                <div>PewDiePie</div>
-              </div>
+            <div id="js-channel-subs-picture" class="sidebar-3">
+              <!--content is in nav-sidebar.js, the data for that is in nav-sidebar-info.js-->
             </div>
             <div class="sidebar-4">
               <div class="side-top">
@@ -289,12 +249,13 @@
         </aside>
       
         <main> <!--just a container for main-->
-          <section class="video-grid-container js-video-grid-container"> <!--main container where all the videos are-->
-            <!--content is in ../data/video-info.js AND ../scripts/video-grid.js-->
+          <section id="js-video-grid-container" class="video-grid-container"> <!--main container where all the videos are-->
+          <!--content is in ../data/video-info.js AND ../scripts/video-grid.js-->
           </section>
         </main>
       </div>
     </div>    
     <script type="module" src="../scripts/video-grid.js"></script>
+    <script type="module" src="../scripts/nav-sidebar.js"></script>
   </body>
 </html>
