@@ -1,0 +1,29 @@
+.whole-wrapper {
+  display: grid;
+  grid-template-rows: 110px 1fr;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+@media (max-width: 1300px) {
+  .whole-wrapper {
+    grid-template-columns: 72px 1fr;
+  }
+  .content-wrapper {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 790px) {
+  .whole-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .content-wrapper {
+    grid-column: 1;
+  }
+}

@@ -4,14 +4,42 @@ aside {
   top: 55px;
   bottom: 0;
   width: 240px;
-  z-index: 3;
+  z-index: 2;
 }
 
-.sidebar {
+@media (max-width: 1300px) {
+  aside {
+    width: 72px;
+  }
+  .sidebar {
+    display: none;
+  }
+  .sidebar-hidden {
+    padding: 0;
+  }
+  .sidebar-hidden .sidebar-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    padding: 15px 0px;
+    font-size: 0.625rem;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 790px) {
+  aside {
+    display: none;
+  }
+}
+
+.sidebar,
+.sidebar-hidden {
   background-color: transparent;
   position: absolute;
   inset: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   color: white;
   overflow-y: auto; /*if content overflows, automatically creates scrollbar. Better than overflow: scrollbar if you dont want all scrollbar showing regardless of the content*/
@@ -19,7 +47,8 @@ aside {
   scrollbar-color: transparent transparent;
 }
 
-.sidebar:hover {
+.sidebar:hover,
+.sidebar-hidden:hover {
   scrollbar-width: thin;
   scrollbar-color: #aaaaaa transparent;
 }
@@ -39,8 +68,8 @@ aside {
   flex-direction: row;
   align-items: center;
   padding: 0 12px;
-  height: 40px;
-  gap: 24px;
+  height: 2.5rem;
+  column-gap: 24px;
   cursor: pointer;
 }
 
@@ -56,8 +85,17 @@ aside {
   transition: background-color 0.1s;
 }
 
+@media (min-width: 1300px) {
+  .home-hidden,
+  .shorts-hidden,
+  .subscriptions-hidden,
+  .user-hidden {
+    display: none;
+  }
+}
+
 .side-top {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -93,16 +131,16 @@ aside {
   display: flex;
   flex-direction: column;
   padding: 4px 12px 0 12px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
-  gap: 12px;
+  row-gap: 12px;
 }
 
 .copyright div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  line-height: 18px;
+  line-height: 1.125rem;
 }
 
 .copyright p {

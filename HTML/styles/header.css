@@ -4,7 +4,7 @@ header {
   right: 0;
   top: 0;
   height: 110px;
-  z-index: 3;
+  z-index: 2;
   backdrop-filter: blur(48px);
   background-color: #0f0f0fcc;
 }
@@ -13,47 +13,51 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 24px 0 23px;
+  padding: 0 24px 0 24px;
   height: 55px;
 }
 
 .left-section {
   display: flex;
   align-items: center;
-  gap: 14px;
+  column-gap: 24px;
   padding: 12px 0 12px 0;
 }
 
 .hamburger-menu-icon {
-  width: 26px;
+  margin-left: -1px;
+  margin-right: -1px;
+  width: 24px;
   filter: invert(100%);
   cursor: pointer;
 }
 
 .youtube-icon-logo {
-  width: 120px;
+  width: 90px;
   cursor: pointer;
 }
 
 .middle-section {
   display: flex;
   flex: 1;
+  justify-content: flex-end;
   align-items: center;
-  margin-left: 250px;
+  margin-left: 40px;
   gap: 16px;
-  max-width: 655px;
+  max-width: 730px;
 }
 
 .search-bar-container {
   display: flex;
   flex: 1;
+  max-width: 600px;
 }
 
 .search-bar {
   background-color: #0F0F0F;
   flex: 1;
   padding: 0 6px 0 16px;
-  font-size: 16px;
+  font-size: 1rem;
   color: white;
   height: 40px;
   width: 0;
@@ -66,30 +70,42 @@ header {
 }
 
 .search-bar:focus {
-  outline: none;
+  outline: 1px solid rgb(22, 112, 248);
+  outline-offset: -1px;
 }
 
 .search-bar::placeholder {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: Roboto;
   font-weight: 400;
 }
 
-@media (max-width: 890px) {
+@media (max-width: 568px) {
+  .search-bar-container,
+  .voice-search-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 569px) {
+  .search-bar-btn-hidden,
+  .voice-search-btn-hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .notification-icon,
+  .voice-search-btn-hidden {
+    display: none;
+  }
   .middle-section {
-    display: none;
+    margin: 0;
   }
 }
 
-@media (min-width: 891px) {
-  .right-section .search-bar-btn,
-  .right-section .voice-search-btn {
-    display: none;
-  }
-}
-
-.right-section .search-bar-btn,
-.right-section .voice-search-btn {
+.search-bar-btn-hidden,
+.voice-search-btn-hidden {
   background-color: transparent;
   border-style: none;
   border-radius: 20px;
@@ -98,7 +114,6 @@ header {
 
 .search-bar-btn {
   background-color: #ffffff1c;
-  margin-left: -1px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border-style: solid;
@@ -107,7 +122,8 @@ header {
   padding: 7.5px 22px;
 }
 
-.search-bar-icon {
+.search-bar-icon,
+.search-bar-icon-hidden {
   width: 20px;
   filter: invert(100%);
 }
@@ -119,7 +135,38 @@ header {
   padding: 7.5px 10px;
 }
 
-.voice-search-icon {
+.voice-search-btn:hover,
+.create-btn:hover {
+  background-color: #aaaaaa60;
+  border-radius: 20px;
+  transition: background-color 0.1s;/*move this to js for desired button click release to work*/
+}
+
+.voice-search-btn:active,
+.create-btn:active {
+  background-color: #aaaaaaa1;
+  border-radius: 20px;
+  transition: background-color 0.1s;
+  /*move this to js for desired button click release to work*/
+}
+
+.voice-search-btn-hidden:hover,
+.search-bar-btn-hidden:hover {
+  background-color: #aaaaaa36;
+  border-radius: 20px;
+  transition: background-color 0.1s;/*move this to js for desired button click release to work*/
+}
+
+.voice-search-btn-hidden:active,
+.search-bar-btn-hidden:active {
+  background-color: #aaaaaa60;
+  border-radius: 20px;
+  transition: background-color 0.1s;
+  /*move this to js for desired button click release to work*/
+}
+
+.voice-search-icon,
+.voice-search-icon-hidden {
   width: 20px;
   filter: invert(100%);
 }
@@ -127,7 +174,7 @@ header {
 .right-section {
   display: flex;
   align-items: center;
-  gap: 30px;
+  column-gap: 24px;
 }
 
 .create-btn {
@@ -135,13 +182,14 @@ header {
   color: white;
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: Roboto;
   font-weight: 400;
   padding: 9px 14px;
   border-style: none;
   border-radius: 24px;
-  gap: 6px;
+  column-gap: 6px;
+  cursor: pointer;
 }
 
 .create-icon {
@@ -152,12 +200,15 @@ header {
 .notification-icon {
   width: 26px;
   filter: invert(100%);
+  cursor: pointer;
 }
+
 
 .personal-profile-picture {
   width: 32px;
   border: none;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .header-bottom {
@@ -167,6 +218,30 @@ header {
   right: 0;
   padding: 0 24px 0 24px;
   height: 55px;
+}
+
+@media (max-width: 1300px) {
+  .header-bottom {
+    left: 72px;
+  }
+}
+
+@media (max-width: 790px)  {
+  .header-bottom {
+    left: 0;
+  }
+}
+
+@media (max-width: 356px) {
+  .left-section {
+    column-gap: 2px;
+  }
+}
+
+@media (max-width: 325px) {
+  .right-section {
+    column-gap: 2px;
+  }
 }
 
 .bottom-section {
@@ -182,10 +257,21 @@ header {
   background-color: #ffffff1c;
   color: white;
   font-family: Roboto;
-  font-size: 14px;
-  height: 30px;
+  font-size: 0.875rem;
+  height: 1.875;
   padding: 0 10px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+}
+
+.hamburger-menu-icon::selection,
+.notification-icon::selection,
+.create-icon::selection,
+.voice-search-icon::selection,
+.voice-search-icon-hidden::selection,
+.search-bar-icon::selection, 
+.search-bar-icon-hidden::selection,
+.sidebar-icon img::selection {
+  background-color: yellow;
 }
