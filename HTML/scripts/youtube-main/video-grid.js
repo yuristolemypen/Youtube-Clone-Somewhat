@@ -1,9 +1,10 @@
-import {videoInfo} from "./data/video-info.js"; 
+import {videoInfo} from "../data/video-info.js"; 
 
-let videoInfoHTML = '';
+export function renderVideos() {
+  let videoInfoHTML = '';
 
-videoInfo.forEach((videos) => {
-  videoInfoHTML += `
+  videoInfo.forEach((videos) => {
+    videoInfoHTML += `
     <div class="video-preview">
       <div class="thumbnail-row">
         <img class="thumbnail" src="${videos.thumbnailImage}">
@@ -26,8 +27,10 @@ videoInfo.forEach((videos) => {
       </div>
     </div>
   `;
-  
-});
 
-document.getElementById('js-video-grid-container')
-  .innerHTML = videoInfoHTML;
+  });
+
+  document.getElementById('js-video-grid-container')
+    .innerHTML = videoInfoHTML;
+}
+
