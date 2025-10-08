@@ -246,6 +246,7 @@ header {
 
 .bottom-section {
   display: flex;
+  position: relative;
   gap: 12px;
   align-items: center;
   white-space: nowrap;
@@ -253,13 +254,62 @@ header {
   scrollbar-width: none;
 }
 
+.scroll-left-bottom-header {
+  position: absolute;
+  background-color: #0F0F0F;
+  left: 24px;
+  top: 12px;
+  padding: 8px 12px 8px 12px;
+  border-radius: 30px;
+  border: none;
+  z-index: 3;
+}
+
+.scroll-right-bottom-header {
+  position: absolute;
+  background-color: #0F0F0F;
+  right: 24px;
+  top: 12px;
+  padding: 8px 12px 8px 12px;
+  border-radius: 30px;
+  border: none;
+  z-index: 3;
+}
+
+.scroll-left-bottom-header p, 
+.scroll-right-bottom-header p {
+  color: white;
+  font-weight: 100;
+  font-size: 0.75rem;
+  transform: scale(1.5, 3);
+}
+
+.scroll-left-bottom-header:hover div,
+.scroll-right-bottom-header:hover div {
+  position: absolute;
+  background-color: #aaaaaa36;
+  border: none;
+  border-radius: 20px;
+  inset: -5px -5px;
+  transition: background-color 0.1s; /*move this to js for desired button click release to work*/
+}
+
+.scroll-left-bottom-header:active div,
+.scroll-right-bottom-header:active div {
+  position: absolute;
+  background-color: #aaaaaa65;
+  border: none;
+  border-radius: 20px;
+  inset: -5px -5px;
+  transition: background-color 0.1s; /*move this to js for desired button click release to work*/
+}
+
 .bottom-btn {
   background-color: #ffffff1c;
   color: white;
-  font-family: Roboto;
   font-size: 0.875rem;
-  height: 1.875;
-  padding: 10px 12px;
+  height: 2rem;
+  padding: 0 10px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
