@@ -257,7 +257,7 @@ header {
 .scroll-left-bottom-header {
   position: absolute;
   background-color: #0F0F0F;
-  left: 24px;
+  left: 12px;
   top: 12px;
   padding: 8px 12px 8px 12px;
   border-radius: 30px;
@@ -268,7 +268,7 @@ header {
 .scroll-right-bottom-header {
   position: absolute;
   background-color: #0F0F0F;
-  right: 24px;
+  right: 12px;
   top: 12px;
   padding: 8px 12px 8px 12px;
   border-radius: 30px;
@@ -291,6 +291,7 @@ header {
   border: none;
   border-radius: 20px;
   inset: -5px -5px;
+  cursor: pointer;
   transition: background-color 0.1s; /*move this to js for desired button click release to work*/
 }
 
@@ -315,13 +316,13 @@ header {
   cursor: pointer;
 }
 
-.hamburger-menu-icon::selection,
-.notification-icon::selection,
-.create-icon::selection,
-.voice-search-icon::selection,
-.voice-search-icon-hidden::selection,
-.search-bar-icon::selection, 
-.search-bar-icon-hidden::selection,
-.sidebar-icon img::selection {
-  background-color: yellow;
+.hamburger-menu-icon,
+.notification-icon,
+.create-icon,
+.voice-search-icon,
+.voice-search-icon-hidden,
+.search-bar-icon, 
+.search-bar-icon-hidden,
+.sidebar-sec img {
+  user-select: none;
 }
