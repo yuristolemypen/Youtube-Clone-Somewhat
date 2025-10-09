@@ -252,6 +252,11 @@ header {
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
+  cursor: grab;
+}
+
+.bottom-section.active-dragging {
+  cursor: grabbing;
 }
 
 .scroll-left-bottom-header {

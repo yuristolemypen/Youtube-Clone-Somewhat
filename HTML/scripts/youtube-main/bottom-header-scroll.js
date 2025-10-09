@@ -1,77 +1,108 @@
-const SCROLL_DISTANCE = 100; // Defines how many pixels the bar will scroll per click.
+const SCROLL_DISTANCE = 100;
+
+const scrollContainer = document.getElementById('js-bottom-section');
+const scrollLeftBtn = document.getElementById('js-scroll-left-bottom-header')
+const scrollRightBtn = document.getElementById('js-scroll-right-bottom-header')
 
 function checkScrollPosition() {
-  // Retrieve the elements using their IDs. This function relies on these elements existing.
-  const scrollContainer = document.getElementById('js-bottom-section');
-  const scrollLeftBtn = document.getElementById('js-scroll-left-bottom-header');
-  const scrollRightBtn = document.getElementById('js-scroll-right-bottom-header');
 
   // Safety check: if any required element is not found, exit the function.
   if (!scrollContainer || !scrollLeftBtn || !scrollRightBtn) return;
 
-  // scrollLeft is the distance scrolled from the very beginning (left edge).
   if (scrollContainer.scrollLeft <= 1) {
-    // If scrollLeft is 0 (or very close), hide the left button.
     scrollLeftBtn.style.display = 'none';
   } else {
-    // Otherwise, the bar is scrolled right, so show the left button.
-    scrollLeftBtn.style.display = 'flex'; // Assumes your CSS uses display: flex for visibility.
+    scrollLeftBtn.style.display = 'flex';
   }
 
-  // Calculate the maximum possible scroll distance.
-  // scrollWidth = total width of all content (including hidden).
-  // clientWidth = total width of the visible container.
-  // The max scroll distance is the content width MINUS the visible area width.
+  // Calculate the maximum possible scroll distance
   const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
-  // Check if the current scroll position is at the end (using a small tolerance of 1 pixel).
+  // Tolerance margin of - 1 just in case it stops before the absolute maxSrollLeft
   if (scrollContainer.scrollLeft >= maxScrollLeft - 1) {
-    // If at the far right, hide the right button.
     scrollRightBtn.style.display = 'none';
   } else {
-    // Otherwise, there is more content to the right, so show the right button.
-    scrollRightBtn.style.display = 'flex';
+    scrollRightBtn.style.display ='flex';
   }
 }
 
-
-export function setupGenreScroll() {
-  // Retrieve elements again. It's safe practice to retrieve elements once inside the setup function.
-  const scrollContainer = document.getElementById('js-bottom-section');
-  const scrollLeftBtn = document.getElementById('js-scroll-left-bottom-header');
-  const scrollRightBtn = document.getElementById('js-scroll-right-bottom-header');
+export function setupBottomHeaderScroll() {
 
   // Safety check for initialization errors.
   if (!scrollContainer || !scrollLeftBtn || !scrollRightBtn) {
-    console.error("Scroll elements not found. Check IDs and class names.");
+    console.log('Scroll elements not found. Check IDs and class names.');
     return;
   }
 
   scrollLeftBtn.addEventListener('click', () => {
-    // scrollBy() scrolls the container relative to its current position.
-    // Negative value moves the view to the left.
     scrollContainer.scrollBy({
       left: -SCROLL_DISTANCE,
-      behavior: 'smooth' // Provides a smooth animation effect.
+      behavior: 'smooth'
     });
-    // Note: The 'scroll' event listener will automatically call checkScrollPosition after the smooth scroll finishes.
   });
 
-  // --- SCROLL RIGHT LOGIC (Click Handler) ---
   scrollRightBtn.addEventListener('click', () => {
-    // Positive value moves the view to the right.
     scrollContainer.scrollBy({
       left: SCROLL_DISTANCE,
       behavior: 'smooth'
     });
   });
 
-  // 1. Initial check: Ensures the left arrow is correctly hidden when the page first loads (scrollLeft = 0).
-  // setTimeout is used here because scrollWidth/clientWidth sometimes need a tiny delay 
-  // to be calculated correctly by the browser after all elements are painted.
+  // The reason behind this so that it wouldn't bug out,
+  // to be correctly calculated after all elements are rendered
   setTimeout(checkScrollPosition, 50);
 
-  // 2. Continuous monitoring: Calls checkScrollPosition every time the user scrolls the container.
+
+  // Calls checkScrollPosition every time the user scrolls the container.
   // This updates the arrow visibility immediately as the bar is scrolled.
   scrollContainer.addEventListener('scroll', checkScrollPosition);
+}
+
+
+let isDragging = false;
+let startX;
+let scrollLeftSnapshot;
+
+export function dragScroll() {
+
+  scrollContainer.addEventListener('mousedown', (mouseEvent) => {
+    isDragging = true;
+
+    scrollContainer.classList.add('active-dragging');
+
+    // mouseEvent.pageX: Absolute mouse position relative to the whole document.
+    // scrollContainer.offsetLeft: The container's fixed distance from the document's left edge.
+    // Subtracting the offset gives us the X position of the mouse *inside* the container.
+    startX = mouseEvent.pageX - scrollContainer.offsetLeft;
+
+    // Record the current scroll position. This value is the fixed reference point
+    // for calculating all subsequent scroll movements.
+    scrollLeftSnapshot = scrollContainer.scrollLeft;
+  });
+
+  scrollContainer.addEventListener('mouseup', () => {
+    isDragging = false;
+    scrollContainer.classList.remove('active-dragging');
+  });
+
+  scrollContainer.addEventListener('mouseleave', () => {
+    isDragging = false;
+    scrollContainer.classList.remove('active-dragging');
+  });
+
+  scrollContainer.addEventListener('mousemove', (mouseEvent) => {
+    if (!isDragging) return;
+    mouseEvent.preventDefault(); // Stop Default Behavior: Prevents the browser from doing things like selecting text.
+
+    // Calculate the 'walk' (distance dragged): 
+    // This is the difference between the current mouse X and the starting mouse X.
+    // A positive 'walk' means the mouse moved right; a negative 'walk' means it moved left.
+    const x = mouseEvent.pageX - scrollContainer.offsetLeft;
+    const scrolled = (x - startX);
+
+    // We scroll based on the original starting position (snapshot) minus the distance scrolled.
+    // Why subtract 'scrolled'? Because dragging the mouse to the RIGHT (positive scrolled) must 
+    // move the content to the LEFT (decreasing scrollLeft).
+    scrollContainer.scrollLeft = scrollLeftSnapshot - scrolled;
+  });
 }
