@@ -156,3 +156,23 @@ aside {
   color: #aaaaaaa1;
   font-weight: 400;
 }
+
+
+/* all js css is below this line */
+#js-show-more-less-btn button {
+  background-color: transparent;
+  border: none;
+  width: 24px;
+}
+
+.js-arrow-icon-down {
+  transform: scale(2.5, 1.5) rotate(90deg);
+  font-weight: 200;
+  color: white;
+}
+
+.js-arrow-icon-up {
+  transform: scale(2.5, 1.5) rotate(-90deg);
+  font-weight: 200;
+  color: white;
+}

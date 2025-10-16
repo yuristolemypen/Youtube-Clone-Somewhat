@@ -67,9 +67,9 @@ export function dragScroll() {
 
   scrollContainer.addEventListener('mousedown', (mouseEvent) => {
     isDragging = true;
-
+    
     scrollContainer.classList.add('active-dragging');
-
+    
     // mouseEvent.pageX: Absolute mouse position relative to the whole document.
     // scrollContainer.offsetLeft: The container's fixed distance from the document's left edge.
     // Subtracting the offset gives us the X position of the mouse *inside* the container.
@@ -82,11 +82,13 @@ export function dragScroll() {
 
   scrollContainer.addEventListener('mouseup', () => {
     isDragging = false;
+
     scrollContainer.classList.remove('active-dragging');
   });
 
   scrollContainer.addEventListener('mouseleave', () => {
     isDragging = false;
+
     scrollContainer.classList.remove('active-dragging');
   });
 
@@ -94,7 +96,7 @@ export function dragScroll() {
     if (!isDragging) return;
     mouseEvent.preventDefault(); // Stop Default Behavior: Prevents the browser from doing things like selecting text.
 
-    // Calculate the 'walk' (distance dragged): 
+    // Calculate the 'scrolled' (distance dragged):
     // This is the difference between the current mouse X and the starting mouse X.
     // A positive 'walk' means the mouse moved right; a negative 'walk' means it moved left.
     const x = mouseEvent.pageX - scrollContainer.offsetLeft;
@@ -105,4 +107,5 @@ export function dragScroll() {
     // move the content to the LEFT (decreasing scrollLeft).
     scrollContainer.scrollLeft = scrollLeftSnapshot - scrolled;
   });
+
 }
