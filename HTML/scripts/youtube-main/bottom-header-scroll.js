@@ -63,7 +63,7 @@ let isDragging = false;
 let startX;
 let scrollLeftSnapshot;
 
-export function dragScroll() {
+export function initDragScroll() {
 
   scrollContainer.addEventListener('mousedown', (mouseEvent) => {
     isDragging = true;

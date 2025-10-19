@@ -29,7 +29,7 @@ aside {
 }
 
 @media (max-width: 790px) {
-  aside {
+  aside, .sidebar-hidden {
     display: none;
   }
 }
@@ -159,7 +159,7 @@ aside {
 
 
 /* all js css is below this line */
-#js-show-more-less-btn button {
+.js-show-more-less-btn button {
   background-color: transparent;
   border: none;
   width: 24px;
@@ -175,4 +175,68 @@ aside {
   transform: scale(2.5, 1.5) rotate(-90deg);
   font-weight: 200;
   color: white;
+}
+
+.js-shrink-aside aside {
+  width: 72px;
+}
+
+.js-shrink-aside .sidebar {
+  display: none;
+}
+
+.js-shrink-aside .sidebar-hidden {
+  padding: 0;
+}
+
+.js-shrink-aside .sidebar-hidden .sidebar-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80px;
+  padding: 15px 0px;
+  font-size: 0.625rem;
+  gap: 8px;
+}
+
+.aside-hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: #0f0f0f;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 240px;
+  z-index: 5;
+}
+
+.js-show-aside .aside-hidden .sidebar {
+  display: block;
+}
+
+.js-show-aside aside {
+  display: none;
+}
+
+
+.js-show-aside .aside-hidden {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.js-show-aside #overlay {
+  opacity: 1;
+  pointer-events: all;
 }

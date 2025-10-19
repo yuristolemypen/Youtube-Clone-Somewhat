@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/aside.css">
     <link rel="stylesheet" href="../styles/wrappers.css">
+    
+    <script type="module" src="../scripts/youtube.js" defer></script>
   </head>
   <body>
     <div class="whole-wrapper">
       <header> <!--main header, just a label-->
         <div class="header-top"> <!--top header, searchbar-->
           <div class="left-section">
-            <img class="hamburger-menu-icon" src="../images/header-icons/hamburger-menu.svg">
+            <img class="hamburger-menu-icon js-hamburger-menu-icon" src="../images/header-icons/hamburger-menu.svg">
             <img class="youtube-icon-logo" src="../images/header-icons/youtube-icon.svg">
           </div>
           <div class="middle-section">
@@ -86,6 +88,155 @@
       </header>
       
       <div class="content-wrapper">
+        <div id="js-aside-hidden" class="aside-hidden">
+          <nav class="sidebar">
+            <div class="header-top">
+              <div class="left-section">
+                <img class="hamburger-menu-icon js-hamburger-menu-icon" src="../images/header-icons/hamburger-menu.svg">
+                <img class="youtube-icon-logo" src="../images/header-icons/youtube-icon.svg">
+              </div>
+            </div>
+            <div class="sidebar-1">
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/home.svg">
+                <div>Home</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/shorts.svg">
+                <div>Shorts</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/subscribe.svg">
+                <div>Subscriptions</div>
+              </div>
+            </div>
+            <div class="sidebar-2">
+              <div class="sidebar-sec side-top">You &nbsp;&nbsp;<span>&gt;</span></div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/history.svg">
+                <div>History</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/playlist.svg">
+                <div>Playlists</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/your-videos.svg">
+                <div>Your Videos</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/watch-later.svg">
+                <div>Watch later</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/liked-videos.svg">
+                <div>Liked videos</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/your-clips.svg">
+                <div>Your clips</div>
+              </div>
+            </div>
+            <div id="js-channel-subs-hidden" class="sidebar-3">
+              <!--content is in nav-sidebar.js, the data for that is in nav-sidebar.js-->
+            </div>
+            <div class="sidebar-4">
+              <div class="side-top">
+                <p class="side-top-text">Explore</p>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/music.svg">
+                <div>Music</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/movies.svg">
+                <div>Movies</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/gaming.svg">
+                <div>Gaming</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/news.svg">
+                <div>News</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/sports.svg">
+                <div>Sports</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/courses.svg">
+                <div>Courses</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/fashion-and-beauty.svg">
+                <div>Fashion & Beauty</div>
+              </div>
+            </div>
+            <div class="sidebar-5">
+              <div class="side-top">
+                <p class="side-top-text">More from Youtube</p>
+              </div>
+              <div class="sidebar-sec">
+                <img src="../images/sidebar-icons/youtube-premium.svg">
+                <div>YouTube Premium</div>
+              </div>
+              <div class="sidebar-sec">
+                <img src="../images/sidebar-icons/youtube-studio.svg">
+                <div>YouTube Studio</div>
+              </div>
+              <div class="sidebar-sec">
+                <img src="../images/sidebar-icons/youtube-music.svg">
+                <div>YouTube Music</div>
+              </div>
+              <div class="sidebar-sec">
+                <img src="../images/sidebar-icons/youtube-kids.svg">
+                <div>YouTube Kids</div>
+              </div>
+            </div>
+            <div class="sidebar-6">
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/settings.svg">
+                <div>Settings</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/report-history.svg">
+                <div>Report history</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/help.svg">
+                <div>Help</div>
+              </div>
+              <div class="sidebar-sec sidebar-icon">
+                <img src="../images/sidebar-icons/send-feedback.svg">
+                <div>Send feedback</div>
+              </div>
+            </div>
+            <div class="sidebar-7">
+              <div class="copyright">
+                <div>
+                  <p>About</p>
+                  <p>Press</p>
+                  <p class="copyright-p-end">Copyright</p>
+                  <p>Contact us</p>
+                  <p>Creators</p>
+                  <p class="copyright-p-end">Advertise</p>
+                  <p>Developers</p>
+                </div>
+                <div>
+                  <p>Terms</p>
+                  <p>Privacy</p>
+                  <p class="copyright-p-end">Policy & Safety</p>
+                  <p class="copyright-p-end">How YouTube works</p>
+                  <p class="copyright-p-end">Test new features</p>
+                </div>
+                <div>
+                  <p class="copyright-text">&copy; 2025 Google LLC</p>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
         <aside>
           <nav class="sidebar-hidden">
             <div class="sidebar-sec sidebar-icon home-hidden">
@@ -253,8 +404,9 @@
           <!--content is in video-grid.js-->
           </section>
         </main>
+
+        <div id="overlay"></div>
       </div>
-    </div>    
-    <script type="module" src="../scripts/youtube.js"></script>
+    </div>
   </body>
 </html>

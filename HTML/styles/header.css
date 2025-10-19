@@ -331,3 +331,9 @@ header {
 .sidebar-sec img {
   user-select: none;
 }
+
+
+/* all js css is below this line */
+.js-shrink-aside .header-bottom {
+  left: 72px;
+}

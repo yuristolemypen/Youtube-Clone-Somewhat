@@ -29,12 +29,12 @@ function generateSubscriptionsHTML() {
 
     const iconChar = '&gt;';
 
-    const showMoreLessText = isExpanded ? 'Show less' : 'Show more';
+    const showMoreLessText = isExpanded ? 'Show less' : `Show ${remainingCount} more`;
 
     const addOnClass = isExpanded ? 'js-arrow-icon-up' : '';
 
     navSidebarHTML += `
-      <div id="js-show-more-less-btn" class="sidebar-sec">
+      <div class="sidebar-sec js-show-more-less-btn">
         <button>
           <div class="js-arrow-icon-down ${addOnClass}">${iconChar}</div>
         </button>
@@ -48,41 +48,36 @@ function generateSubscriptionsHTML() {
 
 
 function attachToggleListener() {
-  const toggleBtn = document.getElementById('js-show-more-less-btn');
-  // We put this in a variable so that we can get the parent container of this later
-  const contentContainer = document.getElementById('js-channel-subs');
+  const toggleBtns = document.querySelectorAll('.js-show-more-less-btn');
 
-  if (toggleBtn && contentContainer) {
-    toggleBtn.addEventListener('click', () => {
-      // Basically a shortcut of if statements for isExpanded === true, else !isExpanded
-      isExpanded = !isExpanded
+  toggleBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      isExpanded = !isExpanded; // flips between true / false
 
-      renderSubscribers();
-      if (!isExpanded) {
-        // Get the parent element of contentContainer, which is the whole sidebar
-        const scrollableParent = contentContainer.parentElement;
+      renderSubscribers(); // Calls function to regenerate HTML for both sidebars
 
-        // Ensure that parent element is found/used
-        if (scrollableParent) {
-          // Reset the scroll position 0 pixels in relation to the sidebar container, which is the parent element of the sub container
-          scrollableParent.scrollTop = 0;
-        } else {
-          console.error('Could not find parent element to reset scroll position.');
-        } // We don't really need this if-else statement, it's just a safeguard if ever an error occurs
-      }
     });
-  }
+  });
 }
 
-
+// Function to render subscription lists dynamically
 export function renderSubscribers() {
-  const subscriptionsContainer = document.getElementById('js-channel-subs');
-  // Just a safeguard
-  if (subscriptionsContainer) {
-    // Render the generated HTML, replacing all old content
-    subscriptionsContainer.innerHTML = generateSubscriptionsHTML();
+  // Store references to both subscription containers (main + mobile sidebar)
+  const containers = [
+    document.getElementById('js-channel-subs'),
+    document.getElementById('js-channel-subs-hidden')
+  ];
 
-    // Re-attach the click listener to the newly created button element
-    attachToggleListener();
-  }
+  containers.forEach((container) => {
+    if (!container) return;  // Safety check → skip if container not found
+   
+    container.innerHTML = generateSubscriptionsHTML();
+    // Reset scroll if collapsed
+    if (!isExpanded && container.parentElement) {
+      container.parentElement.scrollTop = 0;
+    }
+  });
+
+  attachToggleListener();
+  // Reattach click listeners because innerHTML replaces old elements
 }

@@ -27,3 +27,8 @@
     grid-column: 1;
   }
 }
+
+/* all js css is below this line */
+.js-shrink-aside .whole-wrapper {
+  grid-template-columns: 72px 1fr;
+}
